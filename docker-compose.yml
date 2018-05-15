@@ -1,6 +1,6 @@
 version: '2'
 services:
-  web:
+  app:
     build: .
     image: web_multicontainer
     volumes:
@@ -14,9 +14,14 @@ services:
     ports:
       - "80:80"
     volumes_from:
-      - web
+      - app
     depends_on:
-      - web
+      - app
 
   db:
+    restart: always
     image: postgres
+    volumes:
+      - ./dbdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

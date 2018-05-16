@@ -2,7 +2,7 @@ version: '2'
 services:
   app:
     build: .
-    image: web_multicontainer
+    image: rails_app
     volumes:
       - .:/app
       - /app/log # persist logs

@@ -26,3 +26,6 @@
 /config/master.key
 
 /dbdata/*
+
+# Ignore Spring files.
+/spring/*.pid

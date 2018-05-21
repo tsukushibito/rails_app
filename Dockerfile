@@ -7,6 +7,7 @@ RUN mkdir /app
 WORKDIR /app
 ADD Gemfile /app/Gemfile
 ADD Gemfile.lock /app/Gemfile.lock
+ADD .irbrc ~/.irbrc
 RUN bundle install
 ADD . /app
 RUN mkdir -p tmp/sockets
